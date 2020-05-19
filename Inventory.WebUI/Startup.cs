@@ -25,6 +25,7 @@ namespace Inventory.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IHardwareData, InMemoryHardwareData>();
+            services.AddSingleton<ISoftwareData, InMemorySoftwareData>();
             services.AddRazorPages();
         }
 

@@ -6,3 +6,26 @@
 
 <h1>Software Inventory</h1>
 
+<div class="col-md-10">
+    <div>
+        <table class="table">
+            <thead>
+            <th>HostName</th>
+            <th>Program</th>
+            <th>Version</th>
+            <th>Publisher</th>
+            <th>InstallDate</th>
+            </thead>
+            @foreach (var software in Model.SoftwareInventories)
+            {
+            <tr class="d-table-row">
+                <td>@software.HostName</td>
+                <td>@software.Program</td>
+                <td>@software.Version</td>
+                <td>@software.Publisher</td>
+                <td>@software.InstallDate</td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
