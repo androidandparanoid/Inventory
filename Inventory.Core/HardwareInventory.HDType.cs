@@ -2,15 +2,15 @@
 {
     public partial class HardwareInventory
     {
-        public enum HDType
-        {
+        //public HDType ChassisType { get; set; }
+        public enum HDType {
             Laptop,
             Desktop,
             Server,
             Mobile,
-            Other
-        }
+            OtherVM
 
+        }
 
     }
 }

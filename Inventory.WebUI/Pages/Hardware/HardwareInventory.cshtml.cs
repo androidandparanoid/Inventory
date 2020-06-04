@@ -13,7 +13,8 @@ namespace Inventory
     public class HardwareInventoryModel : PageModel
     {
         private readonly IHardwareData hardwareData;
-
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
         public IEnumerable<HardwareInventory> HardwareInventories;
 
         public HardwareInventoryModel(IHardwareData hardwareData)
@@ -22,7 +23,8 @@ namespace Inventory
         }
         public void OnGet()
         {
-            HardwareInventories = hardwareData.GetAll();
+            HardwareInventories = hardwareData.GetHardwareByName(SearchTerm);
+            //HardwareInventories = hardwareData.GetAll();
         }
     }
 }

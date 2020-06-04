@@ -15,13 +15,17 @@ namespace Inventory
 
         public IEnumerable<SoftwareInventory> SoftwareInventories;
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public SoftwareInventoryModel(ISoftwareData softwareData)
         {
             this.softwareData = softwareData;
         }
         public void OnGet()
         {
-            SoftwareInventories = softwareData.GetAll();
+            //SoftwareInventories = softwareData.GetAll();
+            SoftwareInventories = softwareData.GetSoftwareByName(SearchTerm);
         }
     }
 }

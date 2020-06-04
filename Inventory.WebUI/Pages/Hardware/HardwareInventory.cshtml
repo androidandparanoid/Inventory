@@ -7,21 +7,46 @@
 <h1>Hardware Inventory</h1>
 
 <div class="col-md-10">
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                @*<input type="search" class="form-control" value="" name="searchTerm"/>*@
+                <input type="search" class="form-control" asp-for="SearchTerm" />
+                <span class="input-group-append">
+                    <button class="btn btn-info">
+                        <i class="fas fa-search text-gray"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
     <div>
         <table class="table">
-            <thead>
+            <thead class="bg-info text-white">
                 <th>HostName</th>
                 <th>Location</th>
-                <th>Type</th>
+                <th>Chassis Type</th>
                 <th>OperatingSystem</th>
+                <th>Details</th>
+                <th>Edit</th>
             </thead>
             @foreach (var hardware in Model.HardwareInventories)
             {
                 <tr class="d-table-row">
                     <td>@hardware.HostName</td>
                     <td>@hardware.Location</td>
-                    <td>@hardware.Type</td>
+                    <td>@hardware.ChassisType</td>
                     <td>@hardware.OperatingSystem</td>
+                    <td>
+                        <a class="btn btn-lg" asp-page="./HardwareDetails" asp-route-hardwareId="@hardware.HDId">
+                            <i class="fas fa-search-plus text-info"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-lg" asp-page="./HardwareEdition" asp-route-hardwareId="@hardware.HDId">
+                            <i class="fas fa-edit text-info"></i>
+                        </a>
+                    </td>
                 </tr>
             }
         </table>

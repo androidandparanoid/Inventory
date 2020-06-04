@@ -7,24 +7,36 @@
 <h1>Software Inventory</h1>
 
 <div class="col-md-10">
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="search" class="form-control" asp-for="SearchTerm" />
+                <span class="input-group-append">
+                    <button class="btn btn-danger">
+                        <i class="fas fa-search text-gray"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
     <div>
         <table class="table">
-            <thead>
-            <th>HostName</th>
-            <th>Program</th>
-            <th>Version</th>
-            <th>Publisher</th>
-            <th>InstallDate</th>
+            <thead class="bg-danger text-white">
+                <th>HostName</th>
+                <th>Program</th>
+                <th>Version</th>
+                <th>Publisher</th>
+                <th>InstallDate</th>
             </thead>
             @foreach (var software in Model.SoftwareInventories)
             {
-            <tr class="d-table-row">
-                <td>@software.HostName</td>
-                <td>@software.Program</td>
-                <td>@software.Version</td>
-                <td>@software.Publisher</td>
-                <td>@software.InstallDate</td>
-            </tr>
+        <tr class="d-table-row">
+            <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.HostName">@software.HostName</a></td>
+            <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Program">@software.Program</a></td>
+            <td>@software.Version</td>
+            <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Publisher">@software.Publisher</a></td>          
+            <td>@software.InstallDate</td>
+        </tr>
             }
         </table>
     </div>

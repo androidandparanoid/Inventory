@@ -1,0 +1,49 @@
+﻿@page "{hardwareId?}"
+@model Inventory.WebUI.Pages.Hardware.HardwareEditionModel
+@{
+    ViewData["Title"] = "HardwareEdition";
+}
+
+<div class="container">
+    <div class="col-md-10 alert alert-info ">
+        <div class="row justify-content-center">
+            <h2 class="my-1">
+                <small><span class="fas fa-edit text-info"></span>&nbsp;Editing:</small>
+                @Model.HardwareInventory.HostName
+            </h2>
+        </div>
+    </div>
+    <br />
+    <div class="col-md-10 justify-content-center">
+        <form method="post">
+            <input type="hidden" asp-for="HardwareInventory.HDId" />
+            <div class="form-group">
+                <label asp-for="HardwareInventory.HostName"></label>
+                <input asp-for="HardwareInventory.HostName" class="form-control" disabled />
+                <span class="text-danger" asp-validation-for="HardwareInventory.HostName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HardwareInventory.Location"></label>
+                <select asp-for="HardwareInventory.Location" class="form-control" asp-items="Model.Locations">
+                </select>
+                <span class="text-danger" asp-validation-for="HardwareInventory.Location"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info float-right">Save</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="badge">
+        <a asp-page="./HardwareInventory" class="btn btn-info">Hardware Inventory</a>
+    </div>
+    @if (Model.Message != null)
+    {
+        <div class="row  justify-content-center">
+            <div class="span4 offset4 alert alert-info">
+                @Model.Message
+            </div>
+        </div>
+    }
+
+</div>

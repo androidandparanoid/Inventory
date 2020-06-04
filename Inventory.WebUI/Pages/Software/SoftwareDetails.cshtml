@@ -1,0 +1,48 @@
+﻿@page "{searchQuery?}"
+@model Inventory.WebUI.Pages.Software.SoftwareDetailsModel
+@{
+    ViewData["Title"] = "SoftwareDetails";
+}
+
+
+<div class="container">
+    <div class="col-md-10 alert alert-heading ">
+        <div class="row justify-content-center">
+            <h2 class="my-1">
+                <small><span class="fas fa-edit text-danger"></span>&nbsp;Results for:</small>
+                @Model.SearchQuery
+                
+            </h2>
+        </div>
+    </div>
+    <br />
+
+
+    <div class="col-md-10">
+        <div>
+            <table class="table">
+                <thead class="bg-danger text-white">
+                <th>HostName</th>
+                <th>Program</th>
+                <th>Version</th>
+                <th>Publisher</th>
+                <th>InstallDate</th>
+                </thead>
+                @foreach (var software in Model.SoftwareInventory)
+                {
+            <tr class="d-table-row">              
+                <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.HostName">@software.HostName</a></td>
+                <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Program">@software.Program</a></td>
+                <td>@software.Version</td>
+                <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Publisher">@software.Publisher</a></td>
+                <td>@software.InstallDate</td>
+            </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="col-md">
+        <a asp-page="./SoftwareInventory" class="btn btn-danger">Software Inventory</a>
+    </div>
+</div>

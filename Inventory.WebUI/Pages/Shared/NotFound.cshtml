@@ -1,0 +1,23 @@
+﻿@page "{sourceMessage?}"
+
+@model Inventory.WebUI.NotFoundModel
+
+@{
+    ViewData["Title"] = "NotFound";
+}
+
+<div class="col-md-auto alert alert-info row justify-content-center">
+    <h3 class="align-self-center">Your @Model.Message search didn't retrieve any results</h3>
+    @*@Model.SourceUrl*@
+</div>
+
+
+@*<a asp-page="Hardware/HardwareInventory" class="btn btn-info">See All @Model.Message</a>*@
+
+@*Closest takes me to <a asp-page="/Index/" >Home</a>*@
+
+@*<a asp-page="/Index" asp-area="HardwareInventory">Home</a>*@
+
+@*<a href="@Href(Model.ReturnUrl)">HERE</a>*@
+
+<a href="@Href(Model.ReturnUrl)" class="btn btn-info">See All @Model.Message</a>
