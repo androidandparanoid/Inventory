@@ -1,0 +1,9 @@
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\bin\Debug\netcoreapp3.1\Inventory.Core.deps.json
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\bin\Debug\netcoreapp3.1\Inventory.Core.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\bin\Debug\netcoreapp3.1\Inventory.Core.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.csprojAssemblyReference.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.AssemblyInfoInputs.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.AssemblyInfo.cs
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.Core\obj\Debug\netcoreapp3.1\Inventory.Core.csproj.CoreCompileInputs.cache

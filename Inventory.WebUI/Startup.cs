@@ -26,6 +26,7 @@ namespace Inventory.WebUI
         {
             services.AddSingleton<IHardwareData, InMemoryHardwareData>();
             services.AddSingleton<ISoftwareData, InMemorySoftwareData>();
+            services.AddSingleton<IWarrantyData, InMemoryWarrantyData>();
             services.AddRazorPages();
         }
 

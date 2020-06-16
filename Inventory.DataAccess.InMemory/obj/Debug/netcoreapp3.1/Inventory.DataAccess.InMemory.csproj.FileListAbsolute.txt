@@ -1,0 +1,12 @@
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\bin\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.deps.json
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\bin\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\bin\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\bin\Debug\netcoreapp3.1\Inventory.Core.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\bin\Debug\netcoreapp3.1\Inventory.Core.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.csprojAssemblyReference.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.AssemblyInfoInputs.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.AssemblyInfo.cs
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.csproj.CopyComplete
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.InMemory\obj\Debug\netcoreapp3.1\Inventory.DataAccess.InMemory.csproj.CoreCompileInputs.cache

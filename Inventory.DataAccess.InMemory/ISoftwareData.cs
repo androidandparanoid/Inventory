@@ -1,4 +1,4 @@
-﻿using Inventory.Core;
+﻿using Inventory.Core.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
