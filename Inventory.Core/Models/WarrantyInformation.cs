@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Inventory.Core.Models
@@ -7,6 +8,7 @@ namespace Inventory.Core.Models
     public partial class WarrantyInformation
     {
         public string WarrantyID { get; set; }
+        [Key]
         public string AssetTag { get; set; }
         public string Model { get; set; }
         public string ModelFamily { get; set; }

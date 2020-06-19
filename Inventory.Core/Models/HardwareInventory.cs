@@ -7,8 +7,9 @@ namespace Inventory.Core.Models
 {
     public partial class HardwareInventory
     {
-        public string HDId { get; set; }
-        [Required, StringLength(24)]
+        
+        public int HDId { get; set; }
+        [Key, Required, StringLength(24)]
         public string HostName { get; set; }
         public HDType ChassisType { get; set; }
         [Required]

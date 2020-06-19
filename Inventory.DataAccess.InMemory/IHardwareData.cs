@@ -13,7 +13,7 @@ namespace Inventory.DataAccess.InMemory
         //Before SearchByName
         //IEnumerable<HardwareInventory> GetAll();
         IEnumerable<HardwareInventory> GetHardwareByName(string name);
-        HardwareInventory GetHardwareById(string id);
+        HardwareInventory GetHardwareById(int id);
 
         HardwareInventory Update(HardwareInventory hardwareInventory);
         HardwareInventory Add(HardwareInventory hardwareInventory);
@@ -29,7 +29,7 @@ namespace Inventory.DataAccess.InMemory
             {
                 new HardwareInventory
                 {
-                    HDId = Guid.NewGuid().ToString(),
+                    HDId = 1,
                     HostName = "AD3",
                     Location = HardwareInventory.HDLocation.Portable_VM,
                     IPAddress = "10.10.10.20",
@@ -66,7 +66,7 @@ namespace Inventory.DataAccess.InMemory
                 },
                  new HardwareInventory
                 {
-                    HDId = Guid.NewGuid().ToString(),
+                    HDId = 2,
                     HostName = "DESKTOP-4MJNR0T",
                     Location = HardwareInventory.HDLocation.Portable_Computer,
                     IPAddress = "10.10.10.20",
@@ -101,7 +101,7 @@ namespace Inventory.DataAccess.InMemory
                 },
                   new HardwareInventory
                 {
-                    HDId = Guid.NewGuid().ToString(),
+                    HDId = 3,
                     HostName = "W7",
                     Location = HardwareInventory.HDLocation.Home_Server,
                     IPAddress = "10.10.10.20",
@@ -136,7 +136,7 @@ namespace Inventory.DataAccess.InMemory
                 },
                    new HardwareInventory
                 {
-                    HDId = Guid.NewGuid().ToString(),
+                    HDId = 4,
                     HostName = "BOX",
                     Location = HardwareInventory.HDLocation.Home_Server,
                     IPAddress = "10.10.10.20",
@@ -174,10 +174,7 @@ namespace Inventory.DataAccess.InMemory
             };
         }
 
-        public HardwareInventory GetHardwareById(string id)
-        {
-            return hardwareInventories.SingleOrDefault(h => h.HDId == id);
-        }
+       
 
         public IEnumerable<HardwareInventory> GetHardwareByName(string name = null)                      
         {
@@ -205,7 +202,7 @@ namespace Inventory.DataAccess.InMemory
         {
             hardwareInventories.Add(newHardwareInventory);
 
-            newHardwareInventory.HDId = Guid.NewGuid().ToString();
+            //newHardwareInventory.HDId = Guid.NewGuid().ToString();
 
             return newHardwareInventory;
         }
@@ -220,7 +217,13 @@ namespace Inventory.DataAccess.InMemory
         public int Commit()
         {
             return 0;
+        }     
+
+        public HardwareInventory GetHardwareById(int id)
+        {
+            return hardwareInventories.SingleOrDefault(h => h.HDId == id);
         }
+
     }
 
     
