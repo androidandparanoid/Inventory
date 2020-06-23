@@ -4,7 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -14,31 +14,38 @@ namespace Inventory.WebUI
     {
         private readonly IHardwareData hardwareData;
         private readonly ISoftwareData softwareData;
-        private readonly IWarrantyData warrantyData;
+        private readonly IDellWarrantyData dellWarrantyData;
+        private readonly IHPWarrantyData hpWarrantyData;
 
-        public HardwareInventory HardwareInventory { get; set; }
+        public TblInventory HardwareInventory { get; set; }
 
-        public IEnumerable<SoftwareInventory> SoftwareInventory;
-
+        public IEnumerable<TblSoftware> SoftwareInventory;
+        public TblDellWarranty DellWarrantyInformation { get; set; }
+        public TblHpwarranty HPWarrantyInformation { get; set; }
         public WarrantyInformation WarrantyInformation { get; set; }
 
         [TempData]
         public string Message { get; set; }       
 
-        public HardwareDetailsModel(IHardwareData hardwareData, ISoftwareData softwareData, IWarrantyData warrantyData)
+        public HardwareDetailsModel(IHardwareData hardwareData, ISoftwareData softwareData, IDellWarrantyData dellWarrantyData, IHPWarrantyData hpWarrantyData /*, IWarrantyData warrantyData*/)
         {
             this.hardwareData = hardwareData;
             this.softwareData = softwareData;
-            this.warrantyData = warrantyData;
+            this.dellWarrantyData = dellWarrantyData;
+            this.hpWarrantyData = hpWarrantyData;
         }
-        public IActionResult OnGet(string hardwareId)
+        public IActionResult OnGet(int hardwareId)
         {
-            //HardwareInventory = new HardwareInventory();
-            HardwareInventory = hardwareData.GetHardwareById(hardwareId);
-            SoftwareInventory = softwareData.GetSoftwareByName(HardwareInventory.HostName);
-            WarrantyInformation = warrantyData.GetWarrantyBySerial(HardwareInventory.SerialNumber);
+            if (ModelState.IsValid)
+            {
+                HardwareInventory = hardwareData.GetHardwareById(hardwareId);
+                SoftwareInventory = softwareData.GetSoftwareByName(HardwareInventory.ComputerName);
+                DellWarrantyInformation = dellWarrantyData.GetWarrantyBySerial(HardwareInventory.SerialNumber);
+                HPWarrantyInformation = hpWarrantyData.GetWarrantyBySerial(HardwareInventory.SerialNumber);
+            }
             
-           
+            
+
             if (HardwareInventory == null)
             {
 

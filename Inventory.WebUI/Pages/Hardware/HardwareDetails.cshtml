@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <h2 class="my-1">
                 <small><span class="fas fa-edit text-info"></span>&nbsp;Details for:</small>
-                @Model.HardwareInventory.HostName
+                @Model.HardwareInventory.ComputerName
             </h2>
         </div>
     </div>
@@ -38,21 +38,21 @@
                             </h5>
                             <h5 class="my-1">
                                 <small> Ip Address:</small>
-                                @Model.HardwareInventory.IPAddress
+                                @Model.HardwareInventory.IpAddress
                             </h5>
                             <h5 class="my-1">
                                 <small> MAC Address:</small>
-                                @Model.HardwareInventory.MacAddress
+                                @Model.HardwareInventory.Macaddress
                             </h5>
                             <h5 class="my-1">
                                 <small> DHCP Server:</small>
-                                @Model.HardwareInventory.DHCPServer
+                                @Model.HardwareInventory.Dhcpserver
                             </h5>
                         </div>
                         <div class="col">
                             <h5 class="my-1">
                                 <small> DNS Server:</small>
-                                @Model.HardwareInventory.DNSServer
+                                @Model.HardwareInventory.Dnsserver
                             </h5>
                         </div>                     
                     </div>                   
@@ -66,41 +66,41 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-warranty" role="tabpanel" aria-labelledby="nav-warranty-tab">
-                    @if (Model.WarrantyInformation.Checked == true)
+                    @if (Model.DellWarrantyInformation != null)
                     {
-                    <div class="row">
-                        <div class="col">
-                            <h5 class="my-1">
-                                <small>Serial Number:</small>
-                                @Model.WarrantyInformation.AssetTag
-                            </h5>
-                            <h5 class="my-1">
-                                <small>Model:</small>
-                                @Model.WarrantyInformation.Model
-                            </h5>
-                            <h5 class="my-1">
-                                <small>Model Family:</small>
-                                @Model.WarrantyInformation.ModelFamily
-                            </h5>
-                            <h5 class="my-1">
-                                <small>Product ID:</small>
-                                @Model.WarrantyInformation.ProductId
-                            </h5>
-                        </div>
-                        <div class="col">
-                            <h5 class="my-1">
-                                <small>Warranty Start Date:</small>
-                                @Model.WarrantyInformation.WarrantyStartDate
-                            </h5>
-                            <h5 class="my-1">
-                                <small>Warranty End Date</small>
-                                @Model.WarrantyInformation.WarrantyEndDate
-                            </h5>
-                            <h5 class="my-1">
-                                <small>Scan Date:</small>
-                                @Model.WarrantyInformation.ScanDate
-                            </h5>
-                            <h5 class="my-1 @switch (Model.WarrantyInformation.Status.ToString())
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="my-1">
+                                    <small>Serial Number:</small>
+                                    @Model.DellWarrantyInformation.AssetTag
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Model:</small>
+                                    @Model.DellWarrantyInformation.Model
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Model Family:</small>
+                                    @Model.DellWarrantyInformation.ModelFamily
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Product ID:</small>
+                                    @Model.DellWarrantyInformation.ProductId
+                                </h5>
+                            </div>
+                            <div class="col">
+                                <h5 class="my-1">
+                                    <small>Warranty Start Date:</small>
+                                    @Model.DellWarrantyInformation.WarrantyStartDate
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Warranty End Date</small>
+                                    @Model.DellWarrantyInformation.WarrantyEndDate
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Scan Date:</small>
+                                    @Model.DellWarrantyInformation.Qdate
+                                </h5>
+                                <h5 class="my-1 @switch (Model.DellWarrantyInformation.WarrantyStatus.ToString())
                                 {
                                     case "VALID":<text> text-success </text>
                                     break;
@@ -111,24 +111,75 @@
                                     default: <text> text-info </text>
                                     break;
                                 }">
-                                <small>Status:</small>
-                                @Model.WarrantyInformation.Status
-                            </h5>
+                                    <small>Status:</small>
+                                    @Model.DellWarrantyInformation.WarrantyStatus
+                                </h5>
+                            </div>
                         </div>
-                    </div>
+                    }else if(Model.HPWarrantyInformation != null){
+                        
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="my-1">
+                                    <small>Serial Number:</small>
+                                    @Model.HPWarrantyInformation.AssetTag
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Model:</small>
+                                    @Model.HPWarrantyInformation.Model
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Model Family:</small>
+                                    @Model.HPWarrantyInformation.ModelFamily
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Product ID:</small>
+                                    @Model.HPWarrantyInformation.ProductId
+                                </h5>
+                            </div>
+                            <div class="col">
+                                <h5 class="my-1">
+                                    <small>Warranty Start Date:</small>
+                                    @Model.HPWarrantyInformation.WarrantyStartDate
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Warranty End Date</small>
+                                    @Model.DellWarrantyInformation.WarrantyEndDate
+                                </h5>
+                                <h5 class="my-1">
+                                    <small>Scan Date:</small>
+                                    @Model.HPWarrantyInformation.Qdate
+                                </h5>
+                                <h5 class="my-1 @switch (Model.HPWarrantyInformation.WarrantyStatus.ToString())
+                                        {
+                                            case "VALID":<text> text-success </text>
+                                            break;
+                                            case "WARNING": <text> text-warning </text>
+                                            break;
+                                            case "EXPIRED": <text> text-danger </text>
+                                            break;
+                                            default: <text> text-info </text>
+                                            break;
+                                        }">
+                                    <small>Status:</small>
+                                    @Model.HPWarrantyInformation.WarrantyStatus
+                                </h5>
+                            </div>
+                        </div>
+                        
                     }
                     else
                     {
-                        <div class="row  justify-content-center">
-                            <div class="span4 offset4 alert alert-danger">
-                                <h5 class="my-1">
-                                    Warranty not Checked Yet
-                                </h5>
-                            </div>
-
+                    <div class="row  justify-content-center">
+                        <div class="span4 offset4 alert alert-danger">
+                            <h5 class="my-1">
+                                Warranty not Checked Yet
+                            </h5>
                         </div>
+
+                    </div>
                     }
-                    
+
                 </div>                    
                 <div class="tab-pane fade" id="nav-os" role="tabpanel" aria-labelledby="nav-os-tab">
                     <div class="row">
@@ -147,21 +198,21 @@
                             </h5>
                             <h5 class="my-1">
                                 <small>OS Version:</small>
-                                @Model.HardwareInventory.OSVersion
+                                @Model.HardwareInventory.Osversion
                             </h5>
                         </div>
                         <div class="col">
                             <h5 class="my-1">
                                 <small>OS Build:</small>
-                                @Model.HardwareInventory.OSBuild
+                                @Model.HardwareInventory.Osbuild
                             </h5>
                             <h5 class="my-1">
                                 <small>OS Architecture:</small>
-                                @Model.HardwareInventory.OSArchitecture
+                                @Model.HardwareInventory.Osarchitecture
                             </h5>
                             <h5 class="my-1">
                                 <small>OS Install Date:</small>
-                                @Model.HardwareInventory.OSInstallDate
+                                @Model.HardwareInventory.OsinstallDate
                             </h5>
                             <h5 class="my-1">
                                 <small>Last Updated:</small>
@@ -203,7 +254,7 @@
                         <div class="col">
                             <h5 class="my-1">
                                 <small>RAM:</small>
-                                @Model.HardwareInventory.RAM_MB
+                                @Model.HardwareInventory.RamMb
                             </h5>
                             <h5 class="my-1">
                                 <small>Processor:</small>
@@ -229,17 +280,18 @@
                         <div class="tab-pane fade" id="nav-disk" role="tabpanel" aria-labelledby="nav-disk-tab">
                             <h5 class="my-1">
                                 <small>Disk Size:</small>
-                                @Model.HardwareInventory.DiskSize_GB
+                                @Model.HardwareInventory.DiskSizeGb
                             </h5>
                         </div>
                         <div class="tab-pane fade" id="nav-scanner" role="tabpanel" aria-labelledby="nav-scanner-tab">
                             <h5 class="my-1">
                                 <small>Is Asset Scanned?:</small>
-                                @Model.HardwareInventory.Scanned
+                                @Model.HardwareInventory.Scanned.GetValueOrDefault()
+                                
                             </h5>
                             <h5 class="my-1">
                                 <small>Scan Date:</small>
-                                @Model.HardwareInventory.ScanDate
+                                @Model.HardwareInventory.Qdate
                             </h5>
                         </div>
                         <div class="tab-pane fade" id="nav-software" role="tabpanel" aria-labelledby="nav-software-tab">
@@ -257,7 +309,7 @@
                                     @foreach (var software in Model.SoftwareInventory)
                                     {
                                         <tr class="d-table-row">
-                                            <td>@software.HostName</td>
+                                            <td>@software.ComputerName</td>
                                             <td>@software.Program</td>
                                             <td>@software.Version</td>
                                             <td>@software.Publisher</td>

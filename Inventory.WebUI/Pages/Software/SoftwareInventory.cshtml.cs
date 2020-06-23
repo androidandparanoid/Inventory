@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -13,7 +13,7 @@ namespace Inventory
     {
         private readonly ISoftwareData softwareData;
 
-        public IEnumerable<SoftwareInventory> SoftwareInventories;
+        public IEnumerable<TblSoftware> SoftwareInventories;
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }

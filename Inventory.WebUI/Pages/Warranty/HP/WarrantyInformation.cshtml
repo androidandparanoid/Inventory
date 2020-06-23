@@ -1,10 +1,10 @@
 ﻿@page
-@model Inventory.WebUI.Pages.Warranty.WarrantyInformationModel
+@model Inventory.WebUI.Pages.Warranty.HPWarrantyInformationModel
 @{
     ViewData["Title"] = "WarrantyInformation";
 }
 
-<h1>Warranty Information</h1>
+<h1>HP Warranty Information</h1>
 
 <div class="col-md-10">
     <form>
@@ -29,12 +29,12 @@
                 <th>Months Left</th>
                 <th>Days Left</th>
             </thead>
-            @foreach (var warranty in Model.WarrantyInformation)
+            @foreach (var warranty in Model.HPWarrantyInformation)
             {
                 <tr class="d-table-row">
                     <td><a class="btn btn-link" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.AssetTag">@warranty.AssetTag</a></td>
                     <td><a class="btn btn-link" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.Model">@warranty.Model</a></td>
-                    <td><a class="btn btn-link font-weight-bold @switch (warranty.Status.ToString()) { 
+                    <td><a class="btn btn-link font-weight-bold @switch (warranty.WarrantyStatus.ToString()) { 
                                                             case "VALID": <text> text-success </text> 
                                                                 break;
                                                             case "WARNING": <text> text-warning </text> 
@@ -42,7 +42,7 @@
                                                             case "EXPIRED": <text> text-danger </text> 
                                                                 break;
                                                             default:  <text> text-info </text> 
-                                                                break; } text-success" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.Status">@warranty.Status</a></td>
+                                                                break; } text-success" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.WarrantyStatus">@warranty.WarrantyStatus</a></td>
                     <td>@warranty.WarrantyYearsLeft</td>
                     <td>@warranty.WarrantyMonthsLeft</td>
                     <td>@warranty.WarrantyDaysLeft</td>

@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,9 +25,20 @@ namespace Inventory.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IHardwareData, InMemoryHardwareData>();
-            services.AddSingleton<ISoftwareData, InMemorySoftwareData>();
-            services.AddSingleton<IWarrantyData, InMemoryWarrantyData>();
+            services.AddDbContextPool<DeploymentsContext>(options =>
+            {
+
+                options.UseSqlServer(Configuration.GetConnectionString("IventoryTool"));
+
+            });
+
+            services.AddScoped<IHardwareData,SQLHardwareData>();
+            services.AddScoped<ISoftwareData, SQLSoftwareData>();
+            services.AddScoped<IDellWarrantyData, SQLDellWarrantyData>();
+            services.AddScoped<IHPWarrantyData, SQLHPWarrantyData>();
+            //services.AddSingleton<IHardwareData, InMemoryHardwareData>();
+            //services.AddSingleton<ISoftwareData, InMemorySoftwareData>();
+            //services.AddSingleton<IWarrantyData, InMemoryWarrantyData>();
             services.AddRazorPages();
         }
 

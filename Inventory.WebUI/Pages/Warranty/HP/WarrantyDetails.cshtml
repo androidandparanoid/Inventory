@@ -1,5 +1,5 @@
 ﻿@page "{searchQuery?}"
-@model Inventory.WebUI.Pages.Warranty.WarrantyDetailsModel
+@model Inventory.WebUI.Pages.Warranty.HPWarrantyDetailsModel
 @{
     ViewData["Title"] = "WarrantyDetails";
 }
@@ -17,7 +17,7 @@
         <br />
         <div class="col-md">
 
-            @foreach (var warranty in Model.WarrantyInformation)
+            @foreach (var warranty in Model.HPWarrantyInformation)
             {
                 <div class="row">
                     <div class="col-md">
@@ -49,9 +49,9 @@
                         </h5>
                         <h5 class="my-1">
                             <small>Scan Date:</small>
-                            @warranty.ScanDate
+                            @warranty.Qdate
                         </h5>
-                        <h5 class="my-1 @switch (warranty.Status.ToString())
+                        <h5 class="my-1 @switch (warranty.WarrantyStatus.ToString())
                                 {
                                     case "VALID":<text> text-success </text>
                                     break;
@@ -63,7 +63,7 @@
                                     break;
                                 }">
                             <small>Status:</small>
-                            @warranty.Status
+                            @warranty.WarrantyStatus
                         </h5>
                     </div>
                 </div>

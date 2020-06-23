@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Inventory.WebUI.Pages.Warranty
 {
-    public class WarrantyInformationModel : PageModel
+    public class DellWarrantyInformationModel : PageModel
     {
-        private readonly IWarrantyData warrantyData;
-        public IEnumerable<WarrantyInformation> WarrantyInformation;
+        private readonly IDellWarrantyData dellWarrantyData;
+
+        public IEnumerable<TblDellWarranty> DellWarrantyInformation;
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        public WarrantyInformationModel(IWarrantyData warrantyData)
+        public DellWarrantyInformationModel(IDellWarrantyData dellWarrantyData)
         {
-            this.warrantyData = warrantyData;
+            this.dellWarrantyData = dellWarrantyData;
         }
         public void OnGet()
         {
-            WarrantyInformation = warrantyData.GetWarrantyByAsset(SearchTerm);
+            DellWarrantyInformation = dellWarrantyData.GetWarrantyByAsset(SearchTerm);
             //WarrantyInformation = warrantyData.GetAll();
         }
     }

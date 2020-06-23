@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Core", "Inventory.Core\Inventory.Core.csproj", "{F9C1FAB4-5169-4BF5-87AB-268EF52316D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Core", "Inventory.Core\Inventory.Core.csproj", "{F9C1FAB4-5169-4BF5-87AB-268EF52316D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.WebUI", "Inventory.WebUI\Inventory.WebUI.csproj", "{1BA0ED83-1990-4789-B520-F9AF31C37939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.WebUI", "Inventory.WebUI\Inventory.WebUI.csproj", "{1BA0ED83-1990-4789-B520-F9AF31C37939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.DataAccess.InMemory", "Inventory.DataAccess.InMemory\Inventory.DataAccess.InMemory.csproj", "{A46A0B20-C853-4872-B7DF-8E01FF7398FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.DataAccess.InMemory", "Inventory.DataAccess.InMemory\Inventory.DataAccess.InMemory.csproj", "{A46A0B20-C853-4872-B7DF-8E01FF7398FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.DataAccess.SQL", "Inventory.DataAccess.SQL\Inventory.DataAccess.SQL.csproj", "{4C9DC945-36DF-44ED-BB4C-5AAFEE759D29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A46A0B20-C853-4872-B7DF-8E01FF7398FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A46A0B20-C853-4872-B7DF-8E01FF7398FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A46A0B20-C853-4872-B7DF-8E01FF7398FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9DC945-36DF-44ED-BB4C-5AAFEE759D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9DC945-36DF-44ED-BB4C-5AAFEE759D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9DC945-36DF-44ED-BB4C-5AAFEE759D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9DC945-36DF-44ED-BB4C-5AAFEE759D29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

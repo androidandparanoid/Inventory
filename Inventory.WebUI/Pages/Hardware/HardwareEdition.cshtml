@@ -9,18 +9,18 @@
         <div class="row justify-content-center">
             <h2 class="my-1">
                 <small><span class="fas fa-edit text-info"></span>&nbsp;Editing:</small>
-                @Model.HardwareInventory.HostName
+                @Model.HardwareInventory.ComputerName
             </h2>
         </div>
     </div>
     <br />
     <div class="col-md-10 justify-content-center">
         <form method="post">
-            <input type="hidden" asp-for="HardwareInventory.HDId" />
+            <input type="hidden" asp-for="HardwareInventory.Id" />
             <div class="form-group">
-                <label asp-for="HardwareInventory.HostName"></label>
-                <input asp-for="HardwareInventory.HostName" class="form-control" disabled />
-                <span class="text-danger" asp-validation-for="HardwareInventory.HostName"></span>
+                <label asp-for="HardwareInventory.ComputerName"></label>
+                <input asp-for="HardwareInventory.ComputerName" class="form-control" disabled />
+                <span class="text-danger" asp-validation-for="HardwareInventory.ComputerName"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HardwareInventory.Location"></label>

@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Inventory.WebUI.Pages.Warranty
 {
-    public class WarrantyDetailsModel : PageModel
+    public class DellWarrantyDetailsModel : PageModel
     {
-        private readonly IWarrantyData warrantyData;
+        private readonly IDellWarrantyData dellWarrantyData;
 
-        public IEnumerable<WarrantyInformation> WarrantyInformation;
+        public IEnumerable<TblDellWarranty> DellWarrantyInformation;
 
         [TempData]
         public string Message { get; set; }
 
         public string SearchQuery { get; set; }
 
-        public WarrantyDetailsModel(IWarrantyData warrantyData)
+        public DellWarrantyDetailsModel(IDellWarrantyData dellWarrantyData)
         {
-            this.warrantyData = warrantyData;
+            this.dellWarrantyData = dellWarrantyData;
         }
         public IActionResult OnGet(string? searchQuery)
         {
-            WarrantyInformation = warrantyData.GetWarrantyByAsset(searchQuery);
+            DellWarrantyInformation = dellWarrantyData.GetWarrantyByAsset(searchQuery);
 
-            if (WarrantyInformation == null)
+            if (DellWarrantyInformation == null)
             {
                 TempData["Message"] = "Warranty";
                 return RedirectToPage("/Shared/NotFound");
