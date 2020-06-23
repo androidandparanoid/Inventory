@@ -33,17 +33,17 @@
             @foreach (var hardware in Model.HardwareInventories)
             {
                 <tr class="d-table-row">
-                    <td>@hardware.HostName</td>
+                    <td>@hardware.ComputerName</td>
                     <td>@hardware.Location</td>
                     <td>@hardware.ChassisType</td>
                     <td>@hardware.OperatingSystem</td>
                     <td>
-                        <a class="btn btn-lg" asp-page="./HardwareDetails" asp-route-hardwareId="@hardware.HDId">
+                        <a class="btn btn-lg" asp-page="./HardwareDetails" asp-route-hardwareId="@hardware.Id">
                             <i class="fas fa-search-plus text-info"></i>
                         </a>
                     </td>
                     <td>
-                        <a class="btn btn-lg" asp-page="./HardwareEdition" asp-route-hardwareId="@hardware.HDId">
+                        <a class="btn btn-lg" asp-page="./HardwareEdition" asp-route-hardwareId="@hardware.Id">
                             <i class="fas fa-edit text-info"></i>
                         </a>
                     </td>

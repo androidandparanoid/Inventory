@@ -1,0 +1,81 @@
+﻿@page "{searchQuery?}"
+@model Inventory.WebUI.Pages.Warranty.HPWarrantyDetailsModel
+@{
+    ViewData["Title"] = "WarrantyDetails";
+}
+
+    <div class="container">
+        <div class="col-md alert alert-heading ">
+            <div class="row justify-content-center">
+                <h2 class="my-1">
+                    <small><span class="fas fa-edit text-primary"></span>&nbsp;Warranty Results for:</small>
+                    @Model.SearchQuery
+
+                </h2>
+            </div>
+        </div>
+        <br />
+        <div class="col-md">
+
+            @foreach (var warranty in Model.HPWarrantyInformation)
+            {
+                <div class="row">
+                    <div class="col-md">
+                        <h5 class="my-1">
+                            <small>Serial Number:</small>
+                            @warranty.AssetTag
+                        </h5>
+                        <h5 class="my-1">
+                            <small>Model:</small>
+                            @warranty.Model
+                        </h5>
+                        <h5 class="my-1">
+                            <small>Model Family:</small>
+                            @warranty.ModelFamily
+                        </h5>
+                        <h5 class="my-1">
+                            <small>Product ID:</small>
+                            @warranty.ProductId
+                        </h5>
+                    </div>
+                    <div class="col-md">
+                        <h5 class="my-1">
+                            <small>Warranty Start Date:</small>
+                            @warranty.WarrantyStartDate
+                        </h5>
+                        <h5 class="my-1">
+                            <small>Warranty End Date</small>
+                            @warranty.WarrantyEndDate
+                        </h5>
+                        <h5 class="my-1">
+                            <small>Scan Date:</small>
+                            @warranty.Qdate
+                        </h5>
+                        <h5 class="my-1 @switch (warranty.WarrantyStatus.ToString())
+                                {
+                                    case "VALID":<text> text-success </text>
+                                    break;
+                                    case "WARNING": <text> text-warning </text>
+                                    break;
+                                    case "EXPIRED": <text> text-danger </text>
+                                    break;
+                                    default: <text> text-info </text>
+                                    break;
+                                }">
+                            <small>Status:</small>
+                            @warranty.WarrantyStatus
+                        </h5>
+                    </div>
+                </div>
+                <hr />
+
+            }
+        </div>
+
+            <br />
+            <div class="col-md">
+                <a asp-page="./WarrantyInformation" class="btn btn-primary">Warranty Information</a>
+            </div>
+        </div>
+
+

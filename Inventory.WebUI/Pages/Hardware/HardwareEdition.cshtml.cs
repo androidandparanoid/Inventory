@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,7 +19,7 @@ namespace Inventory.WebUI.Pages.Hardware
         public string Message { get; set; }
 
         [BindProperty]
-        public HardwareInventory HardwareInventory { get; set; }
+        public TblInventory HardwareInventory { get; set; }
 
         public IEnumerable<SelectListItem> Locations { get; set; }
 
@@ -39,11 +39,11 @@ namespace Inventory.WebUI.Pages.Hardware
 
             if (!string.IsNullOrEmpty(hardwareId))
             {
-                HardwareInventory = hardwareData.GetHardwareById(hardwareId);
+                HardwareInventory = hardwareData.GetHardwareById(Convert.ToInt32(hardwareId));
             }
             else
             {
-                HardwareInventory = new HardwareInventory();
+                HardwareInventory = new TblInventory();
             }
 
             if (HardwareInventory == null)
@@ -67,20 +67,20 @@ namespace Inventory.WebUI.Pages.Hardware
                 return Page();
             }
 
-            if (!string.IsNullOrEmpty(HardwareInventory.HDId))
+            if (HardwareInventory.Id != null)
             {
                 hardwareData.Update(HardwareInventory);
-                TempData["Message"] = $"Asset: {HardwareInventory.HostName} Updated!";
+                TempData["Message"] = $"Asset: {HardwareInventory.ComputerName} Updated!";
             }
             else
             {
                 hardwareData.Add(HardwareInventory);
-                TempData["Message"] = $"Asset: {HardwareInventory.HostName} Added!";
+                TempData["Message"] = $"Asset: {HardwareInventory.ComputerName} Added!";
             }
 
             hardwareData.Commit();
 
-            return RedirectToPage("./HardwareEdition/", new { hardwareId = HardwareInventory.HDId });
+            return RedirectToPage("./HardwareEdition/", new { hardwareId = HardwareInventory.Id });
         }
     }
 }

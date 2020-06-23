@@ -1,0 +1,53 @@
+﻿@page
+@model Inventory.WebUI.Pages.Warranty.DellWarrantyInformationModel
+@{
+    ViewData["Title"] = "WarrantyInformation";
+}
+
+<h1>Dell Warranty Information</h1>
+
+<div class="col-md-10">
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="search" class="form-control" asp-for="SearchTerm" />
+                <span class="input-group-append">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search text-gray"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+    <div>
+        <table class="table">
+            <thead class="bg-primary text-white">
+                <th>AssetTag</th>
+                <th>Model</th>
+                <th>Warranty Status</th>
+                <th>Years Left</th>
+                <th>Months Left</th>
+                <th>Days Left</th>
+            </thead>
+            @foreach (var warranty in Model.DellWarrantyInformation)
+            {
+                <tr class="d-table-row">
+                    <td><a class="btn btn-link" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.AssetTag">@warranty.AssetTag</a></td>
+                    <td><a class="btn btn-link" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.Model">@warranty.Model</a></td>
+                    <td><a class="btn btn-link font-weight-bold @switch (warranty.WarrantyStatus.ToString()) { 
+                                                            case "VALID": <text> text-success </text> 
+                                                                break;
+                                                            case "WARNING": <text> text-warning </text> 
+                                                                break;
+                                                            case "EXPIRED": <text> text-danger </text> 
+                                                                break;
+                                                            default:  <text> text-info </text> 
+                                                                break; } text-success" asp-page="./WarrantyDetails" asp-route-searchQuery="@warranty.WarrantyStatus">@warranty.WarrantyStatus</a></td>
+                    <td>@warranty.WarrantyYearsLeft</td>
+                    <td>@warranty.WarrantyMonthsLeft</td>
+                    <td>@warranty.WarrantyDaysLeft</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

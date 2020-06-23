@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Inventory.Core.Models;
-using Inventory.DataAccess.InMemory;
+using Inventory.DataAccess.SQL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -13,7 +13,7 @@ namespace Inventory.WebUI.Pages.Software
     {
         private readonly ISoftwareData softwareData;        
 
-        public IEnumerable<SoftwareInventory> SoftwareInventory;
+        public IEnumerable<TblSoftware> SoftwareInventory;
 
         [TempData]
         public string Message { get; set; }

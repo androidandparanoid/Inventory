@@ -31,7 +31,7 @@
                 @foreach (var software in Model.SoftwareInventory)
                 {
             <tr class="d-table-row">              
-                <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.HostName">@software.HostName</a></td>
+                <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.ComputerName">@software.ComputerName</a></td>
                 <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Program">@software.Program</a></td>
                 <td>@software.Version</td>
                 <td><a class="btn btn-link" asp-page="./SoftwareDetails" asp-route-searchQuery="@software.Publisher">@software.Publisher</a></td>

@@ -1,0 +1,15 @@
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.deps.json
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.csprojAssemblyReference.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.AssemblyInfoInputs.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.AssemblyInfo.cs
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.runtimeconfig.json
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.runtimeconfig.dev.json
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.genruntimeconfig.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.Core.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\bin\Debug\netcoreapp3.1\Inventory.Core.pdb
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.csproj.CoreCompileInputs.cache
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.csproj.CopyComplete
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.dll
+D:\Users\rperez\Box\ASP\DEVRepos\Inventory\Inventory.DataAccess.SQL\obj\Debug\netcoreapp3.1\Inventory.DataAccess.SQL.pdb
